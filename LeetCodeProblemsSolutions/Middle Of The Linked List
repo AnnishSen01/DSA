@@ -1,0 +1,33 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+
+// this function will return the length of the list.
+int getLength( struct ListNode* head)
+    {
+        int len=0;
+        while(head != NULL)
+        {
+            len++;
+            head=head->next;
+        }
+        return len;
+    }
+   struct ListNode* middleNode( struct ListNode* head) {
+        int len = getLength(head);
+        int ans=(len/2);
+struct ListNode* temp=head;
+int cnt=0;
+        while(cnt<ans)
+        {
+            temp=temp -> next;
+            cnt++;// count will keep increasing untill the temp reaches midle.
+        }
+// after the end of the loop cnt will be the middle of the linked list, khatak.
+        return temp;
+    
+}
